@@ -65,6 +65,8 @@ class Mellat implements Gateway
     public function verify(Request $request, Billing $billing)
     {
         return Payment::amount(intval($billing->amount()))
+                    ->via('behpardakht')
+                    ->config($this->getConfigurations())
                     ->transactionId($billing->getIdentifier())
                     ->verify()
                     ->getReferenceId();
