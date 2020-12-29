@@ -3,7 +3,7 @@
 namespace Armincms\Mellat;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\fields\{Text, Boolean};
+use Laravel\Nova\Fields\{Text, Boolean};
 use Armincms\Arminpay\Contracts\{Gateway, Billing}; 
 use Shetabit\Payment\Facade\Payment;
 use Shetabit\Multipay\Invoice;
