@@ -1,0 +1,30 @@
+{
+    "name": "armincms/mellat",
+    "description": "An Armincms paymnet gateway.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0",
+        "shetabit/payment": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Armincms\\Mellat\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Armincms\\Mellat\\MellatServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
