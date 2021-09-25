@@ -38,10 +38,12 @@ class Mellat implements Gateway
      */
     public function pay(Request $request, Billing $billing)
     {    
-        return Payment::callbackUrl($billing->callback())
-                        ->via('behpardakht')
-                        ->config($this->getConfigurations())
+        return Payment::via('behpardakht')
+                        ->config(array_merge($this->getConfigurations(), [
+                        	'callbackUrl' => $billing->callback(),
+                        ]))
                         ->purchase($this->newInvoice($billing))
+                        ->callbackUrl($billing->callback())
                         ->pay();
     } 
 
